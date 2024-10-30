@@ -1,6 +1,7 @@
 const app = require('./app');
 const config = require('./app/config');
 const MongoDB = require('./app/utils/mongodb.util.js');
+const dotenv = require('dotenv').config();
 
 async function startServer() {
   try {
@@ -8,7 +9,7 @@ async function startServer() {
 
     console.log(`Connected to database!`);
 
-    const PORT = process.env.PORT || 5000;
+    const PORT = process.env.PORT || 3000;
 
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
